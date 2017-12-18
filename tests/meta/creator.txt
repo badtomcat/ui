@@ -1,0 +1,5 @@
+name=creator
+dataType=enum
+domain=1,3,5,7,8
+domainDescription=111,3333,5name,777,lastname
+alias=override text

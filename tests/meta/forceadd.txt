@@ -1,0 +1,4 @@
+name=force
+dataType=varchar
+domain=2
+alias=override text
