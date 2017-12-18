@@ -137,7 +137,7 @@ abstract class TagNode extends Node
         return array_key_exists ( $attr, $this->attributes );
     }
     /**
-     *
+     * 可以使用 "foo bar"这样形式,中间空格可以多个
      * @param string $cls
      * @return $this
      */
@@ -145,7 +145,11 @@ abstract class TagNode extends Node
         if ($this->hasAttr ( "class" )) {
             $c = $this->attributes ["class"];
             $cArr = explode ( " ", $c );
-            $cArr [] = $cls;
+            $cls = explode ( " ", trim($cls));
+            foreach ($cls as $cl)
+            {
+                $cArr [] = trim($cl);
+            }
             $this->setAttr ( "class", join ( " ", $cArr ) );
         } else {
             $this->addAttr ( "class", $cls );

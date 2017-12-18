@@ -115,9 +115,14 @@ class UiTest extends \PHPUnit_Framework_TestCase
         $tuple->append($field);
 
         $form = new Badtomcat\Ui\Form($tuple);
+        $form->globalClass = 'control';
+        $form->class = [
+            'foo' => 'foocls1 foocls2'
+        ];
         $form->addUiType('bar',\Badtomcat\Ui\Adapter\Mysql\FieldUI::TYPE_TEXT);
         $form->initFormElement();
         $form->getFormElement()->setMethod('POST')->setAction('/foo/bar');
+
 
         /**
          * @var \Badtomcat\Ui\Base\Element $item
@@ -130,6 +135,7 @@ class UiTest extends \PHPUnit_Framework_TestCase
         ob_start();
         include __DIR__."/tpl/form.php";
         $ret = ob_get_clean();
+//        file_put_contents(__DIR__."/tpl/form.out.txt",$ret);exit;
         $con = file_get_contents(__DIR__."/tpl/form.out.txt");
         $this->assertEquals($con,$ret);
     }

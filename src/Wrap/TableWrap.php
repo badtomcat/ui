@@ -8,8 +8,8 @@
  */
 namespace Badtomcat\Ui\FormWrap;
 
-use Badtomcat\Ui\Form;
+use Badtomcat\Ui\Table;
 
-abstract class Wrap {
-	abstract public function wrap(Form $form);
+abstract class TableWrap {
+	abstract public function wrap(Table $form);
 }

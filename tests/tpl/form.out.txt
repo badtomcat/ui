@@ -1,20 +1,12 @@
 <div class="abc">
         <div class="row">
-        <div class="left">
-            foo        </div>
-        <div class="right">
-            <select name="foo"><option value="0">111</option><option value="1">222</option></select>        </div>
-    </div>
+                <div class="left">fooselect</div>
+        <div class="right"><select name="foo" class="control foocls1 foocls2 foo"><option value="0">111</option><option value="1">222</option></select></div>
+            </div>
         <div class="row">
-        <div class="left">
-            bar        </div>
-        <div class="right">
-            <input type="text" value="222" name="bar"/>        </div>
-    </div>
+                <div class="left">barinput</div>
+        <div class="right"><input type="text" value="222" name="bar" class="control"/></div>
+            </div>
         <div class="row">
-        <div class="left">
-                    </div>
-        <div class="right">
-            <input type="submit" value="提交"/>        </div>
-    </div>
+                <input type="submit" value="提交"/>            </div>
     </div>

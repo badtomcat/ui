@@ -14,23 +14,21 @@ class Pagination {
 	private $pageBtnLen;
 	private $rzRear;
 	private $data;
-	/**
-	 * 函数调用不需要考虑从0开始,外部全部从1开始,返回的数据也是从1计数
-	 *
-	 * @param numeric $totalLen
-	 *        	总共数据记录长度
-	 * @param numeric $curPageNum
-	 *        	当前页
-	 * @param numeric $pageSize
-	 *        	一页多少条记录
-	 * @param numeric $pageBtnLen
-	 *        	显示多少个页按钮
-	 * @param numeric $pageBtnLen
-	 *        	显示多少个页按钮
-	 * @param bool $rzRear
-	 *        	按钮个数为偶数时,例如显示两个按钮,当前页为2,TRUE返回2,3,FALSE返回1,2
-	 * @throws Exception
-	 */
+
+    /**
+     * 函数调用不需要考虑从0开始,外部全部从1开始,返回的数据也是从1计数
+     *
+     * @param numeric $totalLen
+     *            总共数据记录长度
+     * @param numeric $curPageNum
+     *            当前页
+     * @param numeric $pageSize
+     *            一页多少条记录
+     * @param numeric $pageBtnLen
+     *            显示多少个页按钮
+     * @param bool $rzRear
+     *            按钮个数为偶数时,例如显示两个按钮,当前页为2,TRUE返回2,3,FALSE返回1,2
+     */
 	public function __construct($totalLen, $curPageNum, $pageSize, $pageBtnLen, $rzRear = true) {
 		if (is_numeric ( $totalLen ) && is_numeric ( $curPageNum ) && is_numeric ( $pageSize ) && is_numeric ( $pageBtnLen )) {
 			$this->totalLen = $totalLen;

@@ -39,11 +39,18 @@ namespace Badtomcat\Ui;
 use Badtomcat\Data\Component;
 use Badtomcat\Data\Tuple;
 use Badtomcat\Ui\Adapter\Mysql\FieldUI;
+use Badtomcat\Ui\Base\Element;
 use Badtomcat\Ui\Base\Node;
 use Badtomcat\Ui\Base\Form as BaseForm;
 
 class Form
 {
+    public $globalClass = '';
+    /**
+     * name => "cls1 cls2"
+     * @var array
+     */
+    public $class = [];
     /**
      *
      * @var Tuple
@@ -84,6 +91,17 @@ class Form
         $this->form = new BaseForm();
         if (!is_null($tuple))
             $this->setTuple($tuple);
+    }
+
+    /**
+     * @param $name
+     * @return Element|null
+     */
+    public function get($name)
+    {
+        if (isset($this->children[$name]))
+            return $this->children[$name];
+        return null;
     }
 
     /**
@@ -229,7 +247,7 @@ class Form
      * @param Node $node
      * @return $this
      */
-    public function appendNode(Node $node)
+    protected function appendNode(Node $node)
     {
         $this->form->appendNode($node);
         return $this;
@@ -261,7 +279,6 @@ class Form
          */
         foreach (($order_tuple ? $this->tuple->order() : $this->tuple) as $component) {
             $formName = array_key_exists($component->getName(), $this->nameMap) ? $this->nameMap [$component->getName()] : $component->getName();
-//            echo "\n===============$formName=============\n";
             if (array_key_exists($formName, $this->default)) {
                 $component->setDefault($this->default [$formName]);
             }
@@ -287,6 +304,13 @@ class Form
 
                 $ui->element->alias = $component->getAlias();
                 $ui->element->setName($formName);
+                if ($this->globalClass != '') {
+                    $ui->element->addClass($this->globalClass);
+                }
+                if (array_key_exists($formName, $this->class)) {
+                    $ui->element->addClass($this->class[$formName]);
+                }
+                $this->children[$formName] = $ui->element;
             }
         }
         return $this;

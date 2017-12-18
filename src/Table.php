@@ -6,9 +6,9 @@
  * @Desc: 
  * 依赖:
  */
-namespace tian\ui;
+namespace Badtomcat\Ui;
 
-class table {
+class Table {
 	/**
 	 * 数据的KEY => alias
 	 * 表单字段的先后顺序为此为准
@@ -129,13 +129,13 @@ class table {
 	public function alias() {
 		return $this->alias;
 	}
-	/**
-	 *
-	 * @param \Badtomcat\Ui\tableWrap\tableWrap $wrap
-	 * @return \Badtomcat\Ui\table
-	 */
-	public function wrapTable(\Badtomcat\Ui\tableWrap\tableWrap $wrap) {
-		$wrap->wrap ( $this );
-		return $this;
-	}
+//	/**
+//	 *
+//	 * @param \Badtomcat\Ui\tableWrap\tableWrap $wrap
+//	 * @return \Badtomcat\Ui\table
+//	 */
+//	public function wrapTable(\Badtomcat\Ui\tableWrap\tableWrap $wrap) {
+//		$wrap->wrap ( $this );
+//		return $this;
+//	}
 }
