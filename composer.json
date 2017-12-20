@@ -16,11 +16,6 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=5.4.0",
-    "badtomcat/filesystem":"dev-master",
-    "badtomcat/connection":"dev-master",
-    "badtomcat/cache":"dev-master",
-    "badtomcat/validator":"dev-master",
-    "badtomcat/reflection": "dev-master",
     "badtomcat/data":"dev-master"
   },
   "require-dev": {
@@ -36,26 +31,6 @@
   {
     "type": "vcs",
     "url": "https://github.com/badtomcat/data.git"
-  },
-  {
-    "type": "vcs",
-    "url": "https://github.com/badtomcat/connection.git"
-  },
-  {
-    "type": "vcs",
-    "url": "https://github.com/badtomcat/filesystem.git"
-  },
-  {
-    "type": "vcs",
-    "url": "https://github.com/badtomcat/cache.git"
-  },
-  {
-    "type": "vcs",
-    "url": "https://github.com/badtomcat/reflection.git"
-  },
-  {
-    "type": "vcs",
-    "url": "https://github.com/badtomcat/validator.git"
   }
 ]
 }
