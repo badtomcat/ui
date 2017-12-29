@@ -128,6 +128,7 @@ class Pagination {
 	 */
 	public function getData() {
 		$ret = array ();
+		$ret ["total"] = $this->totalLen;
 		$ret ["maxPage"] = ceil ( $this->totalLen / $this->pageSize ); // 类型:PAGE
 		$ret ["pageSize"] = $this->pageSize; // 类型:LENGTH
 		if ($this->curPageNum > $ret ["maxPage"]) {
