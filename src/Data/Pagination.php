@@ -5,7 +5,7 @@
  * Author: Awei.tian
  * function: 
  */
-namespace Badtomcat\Data;
+namespace Badtomcat\Ui\Data;
 
 class Pagination {
 	private $totalLen;
